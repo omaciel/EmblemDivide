@@ -23,7 +23,7 @@ for d in p:
 	data = data.replace(d, "####\\chiipter{"+ '%02d' % ch +"}", 1)
 	ch = ch + 1
 
-data = data.replace("chiipter", "section")
+data = data.replace("chiipter", "chapter")
 data = data.replace("\n\n\n\n", "\n\n")
 
 chaps = data.split("####")

@@ -11,9 +11,10 @@ replacers=[("“", "``"),("”", "''"),("* * *", "\\thoughtbreak"),("\n","\n\n")
 for i in replacers:
 	data = data.replace(i[0], i[1])
 	
-p = re.findall("(\n(\d\d) \n(.*)\n)", data, re.M)
+p = re.findall("(\n(\d\d)\s\n(.*)\n(.*))", data, re.M)
 for d in p:
-	data = data.replace(d[0], "\n####\\chapter{"+d[1]+"}\n\\section{"+d[2]+"}\n")
+	print d
+	data = data.replace(d[0], "\n####\\chapter{"+d[1]+"}\n\\section{"+d[3].strip(" ")+"}\n")
 
 chaps = data.split("####")
 
