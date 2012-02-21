@@ -4,10 +4,7 @@
 
 #libreoffice --headless --convert-to txt:"Text (encoded)" Alchemy2.0.odt 
 
-parts = [("01","28","TEARS AND LOVE", "I"),
-("29","58","UNWANTED FEELINGS", "II"),
-("59","90","THE CONSEQUENCE OF CHOICE", "III"),
-("91","92", "PRELUDE", "IV")]
+parts = [("01","100","EMBLEM DIVIDE", "")]
 
 import re
 
@@ -15,7 +12,7 @@ f = open("tmp/combine.tex")
 data = f.read()
 f.close()
 	
-p = re.findall("(\\\\chapter\{\d\d\}|\\\\thoughtbreak)", data, re.M)
+p = re.findall("(\\\\chapter\{\d\d\})", data, re.M)
 
 ch = 1
 
@@ -70,7 +67,7 @@ f = open("tmp/combine.tex")
 data = f.read()
 f.close()
 	
-p = re.findall("(\\\\chapter\{\d\d\}|\\\\thoughtbreak)", data, re.M)
+p = re.findall("(\\\\chapter\{\d\d\})", data, re.M)
 
 ch = 1
 
