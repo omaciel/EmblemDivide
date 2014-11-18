@@ -74,7 +74,10 @@ ch = 1
 plob = re.findall("(\\\\textit\{(.*?)\})", data)
 for i in plob:
 	data = data.replace(i[0], "<em>" + i[1] + "</em>")
-
+plob = re.findall("(\\\\section\{(.*?)\})", data)
+for i in plob:
+	data = data.replace(i[0], "<h3>" + i[1] + "</h3>")
+data = data.replace("\\thoughtbreak", "<hr>")
 
 for d in p:
 	data = data.replace(d, "####<h2>"+ '%02d' % ch +"</h2>\n<div>", 1)
@@ -94,7 +97,6 @@ currentPart = 0
 count = 1
 
 fi = open("tmp/html.html", "w")
-fi.write("<h1>Alchemy Reigns</h1><h2>Book 1 : Breaking Silence</h2>\n")
 for chap in chaps:
 	
 	if count == 1 and currentPart == 0:
